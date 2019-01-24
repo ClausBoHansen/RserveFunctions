@@ -1,14 +1,37 @@
 #' @title Make prediction based on saved model
 #'
 #' @description Loads specified model and makes prediction using given predictors
-#' @param model Model already loaded in environment
+#' @param trainedmodel Model already loaded in environment
+#' @param predictors Named vector containing predictors
 #' @keywords machine_learning prediction
 #' @export
 #' @examples
-#' coming ...
+#' Prediction(TrainedModel, Predictors)
 
 # Define function Prediction
 
-Prediction <- function() {
-  17
+Prediction <- function(trainedmodel, predictors) {
+
+  predictors <- data.frame("CAS_ID"= 9,
+                           "PRO_msrp"= -0.0255,
+                           "CAS_Initial_Return_Code_C2"= 1,
+                           "CAS_Initial_Return_Code_C5"= 0,
+                           "CAS_Order_Entered_By_Full_Name_System_Administrator_"= 1,
+                           "CAS_WarrantyStatus_N"= 0,
+                           "PRO_Segment_PND"= 0,
+                           "PRO_Family_FIT_VIVOSMART" = 0,
+                           "PRO_Family_PND_Advance"= 0,
+                           "PRO_SFPP_Market_DEF"= 1,
+                           "PRO_SFPP_Market_FIT"= 0,
+                           "PRO_SFPP_Market_PND"= 0,
+                           "PRO_SFPP_Reporting_Unspecified"= 1,
+                           "PRO_WPC_Product_Series_vivosmarthr"= 0,
+                           "PRO_SKU_without_variation_010_01041"= 0,
+                           "PRO_SKU_without_variation_010_03717"= 0,
+                           "PC1"= -0.0254
+  )
+
+  predict(trainedmodel, predictors)
+
+#  trainedmodel
 }
