@@ -12,7 +12,7 @@
 
 Prediction <- function(trainedmodel, predictors) {
 
-  predictors <- data.frame("CAS_ID"= 9,
+  Xpredictors <- data.frame("CAS_ID"= 9,
                            "PRO_msrp"= -0.0255,
                            "CAS_Initial_Return_Code_C2"= 1,
                            "CAS_Initial_Return_Code_C5"= 0,
@@ -31,7 +31,9 @@ Prediction <- function(trainedmodel, predictors) {
                            "PC1"= -0.0254
   )
 
+
   predict(trainedmodel, predictors)
+#  17
 
 #  trainedmodel
 }
